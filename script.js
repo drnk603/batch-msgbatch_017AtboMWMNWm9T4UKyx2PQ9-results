@@ -313,7 +313,7 @@
 
         if (nameField && nameField.hasAttribute('required')) {
           var nameValue = nameField.value.trim();
-          var namePattern = /^[a-zA-ZÀ-ÿs-']{2,50}$/;
+          var namePattern = /^[a-zA-ZÀ-ÿ\s-']{2,50}$/;
           
           if (nameValue === '') {
             isValid = false;
@@ -331,7 +331,7 @@
         for (var j = 0; j < emailFields.length; j++) {
           var emailField = emailFields[j];
           var emailValue = emailField.value.trim();
-          var emailPattern = /^[^s@]+@[^s@]+.[^s@]+$/;
+          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
           
           if (emailField.hasAttribute('required') && emailValue === '') {
             isValid = false;
@@ -348,7 +348,7 @@
 
         if (phoneField && phoneField.hasAttribute('required')) {
           var phoneValue = phoneField.value.trim();
-          var phonePattern = /^[ds+-()]{10,20}$/;
+          var phonePattern = /^[\d\s+\-()]{10,20}$/;
           
           if (phoneValue === '') {
             isValid = false;
